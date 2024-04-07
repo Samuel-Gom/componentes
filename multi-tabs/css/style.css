@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #8b3dff;
+  --text-color: #0d1216db;
+  --text-color-opacity: #0d1216b3;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.section {
+  padding-inline: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: 5rem;
+}
+
+.block {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.block__title {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.block__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  overflow: scroll;
+  scrollbar-width: none; /* Soporte para Firefox - oculta la barra de desplazamiento */
+}
+
+/* Oculta la barra de desplazamiento en navegadores Webkit */
+.block__content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.block__link {
+  position: relative;
+  padding: .6rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text-color-opacity);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.block__link:hover {
+  color: var(--text-color);
+}
+
+.block__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+
+.block__link:hover::after {
+  transform: scaleX(1);
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.content__subtitle {
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+}
+
+.content__paragraph {
+  margin-bottom: 1rem;
+  color: var(--text-color-opacity);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list__item {
+  list-style-image: url(../img/icon-check.svg);
+  list-style-position: inside;
+  color: var(--text-color-opacity);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.content__figure {
+  order: -1;
+  width: 100%;
+  max-width: 630px;
+}
+
+.content__image {
+  display: block;
+  width: 100%;
+}
+
+
+@media (width >= 896px) {
+  .block__title {
+    font-size: 2rem;
+  }
+  
+  .block__content {
+    justify-content: center;
+  }
+
+  .content {
+    flex-direction: row;
+    gap: 3rem;
+  }
+  
+  .content__subtitle {
+    font-size: 1.5rem;
+  }
+
+  .content__paragraph {
+    font-size: 1.1rem;
+  }
+
+  .list__item {
+    font-size: 1.1rem;
+  }
+  
+  .content__figure {
+    order: 1;
+  }
+}
+
+@media (width >= 1024px) {
+  .content {
+    gap: 4rem;
+  }
+}
