@@ -6,12 +6,125 @@
 
 :root {
   --background-cta: #ffffffb3;
+  --color-title: #0e1318;
+  --color-paragraph: #11171d99;
+  --color-cta: #0d1216;
+  --color-cta-hover: #394c6026;
 }
 
-body {
-  font-family: "Noto Sans", sans-serif;
+body { font-family: "Noto Sans", sans-serif; }
+
+.container { max-width: 1200px; }
+
+.container-services {
+  display: grid;
+  gap: 1.5rem;
+  margin-inline: auto;
+  padding: 1.5rem;
 }
 
-.container {
-  max-width: 1200px;
+.service {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.service--one { background-color: #e5ccfd73; }
+
+.service--two { background-color: #dee5ff; }
+
+.service--three { background-color: #ffe0e4; }
+
+.service--four { background-color: #ffefe7; }
+
+.service--five { background-color: #e0f9eb; }
+
+.service__figure { width: 150px; }
+
+.service__img {
+  width: 100%;
+  height: 100%;
+}
+
+.service__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service__title {
+  font-size: 1.3rem;
+  color: var(--color-title);
+}
+
+.service__paragraph { color: var(--color-paragraph); }
+
+.service__container-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service__cta {
+  width: 100%;
+  padding: .8rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--color-cta);
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--background-cta);
+  border-radius: .5rem;
+  transition: background-color .3s;
+
+  &:hover { background-color: var(--color-cta-hover); }
+}
+
+.service__cta--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+@media (width >= 480px) {
+  .service__figure { width: 200px; }
+}
+
+@media (width >= 768px) {
+  .service__figure { width: 250px; }
+
+  .service__container-ctas { flex-direction: row; }
+
+  .service__cta {
+    width: max-content;
+    padding: .8rem .9rem;
+  }
+}
+
+@media (width >= 896px) {
+  .container-services {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:  "one  one"
+                          "two  three"
+                          "four five";
+  }
+
+  .service { justify-content: flex-end; }
+
+  .service--one { grid-area: one; }
+  .service--two { grid-area: two; }
+  .service--three { grid-area: three; }
+  .service--four { grid-area: four; }
+  .service--five { grid-area: five; }
+}
+
+@media (width >= 1200px) {
+  .container-services {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:  "one   one  two"
+                          "three four five";
+  }
 }
