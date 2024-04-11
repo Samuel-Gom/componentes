@@ -150,7 +150,8 @@ body { font-family: "Inter", sans-serif; }
 
 @media (width >= 1200px) {
   .by-the-numbers__cards {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:  "one two three four";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:  "one two three"
+                          ". four .";
   }
 }
