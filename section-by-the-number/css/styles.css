@@ -103,7 +103,7 @@ body { font-family: "Inter", sans-serif; }
 }
 
 .card__percentage {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   color: #0E9251;
 }
@@ -121,12 +121,7 @@ body { font-family: "Inter", sans-serif; }
   }
 }
 
-@media (width >= 768px) {
-  .by-the-numbers__cta {
-    width: max-content;
-    padding: 1.2rem 4rem;
-  }
-
+@media (width >= 520px) {
   .by-the-numbers__cards {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:  "one   two"
@@ -142,16 +137,40 @@ body { font-family: "Inter", sans-serif; }
   .card--four { grid-area: four; }
 }
 
+@media (width >= 768px) {
+  .by-the-numbers__cta {
+    width: max-content;
+    padding: 1.2rem 4rem;
+  }
+
+  .by-the-numbers__cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:  "one two three"
+                          ". four .";
+  }
+
+  .card {
+    justify-content: space-between;
+  }
+
+  .card__subtitle {
+    padding-inline: 1rem;
+  }
+}
+
 @media (width >= 1024px) {
   .by-the-numbers__title {
     font-size: 3rem;
+  }
+
+  .card__percentage {
+    font-size: 4rem;
   }
 }
 
 @media (width >= 1200px) {
   .by-the-numbers__cards {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:  "one two three"
-                          ". four .";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:  "one two three four";
   }
 }
