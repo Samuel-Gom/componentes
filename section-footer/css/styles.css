@@ -456,12 +456,12 @@ body { font-family: "Inter", sans-serif; }
   }
 
   .footer-top__stats-value {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     text-align: left;
   }
 
   .footer-top__stats-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: left;
   }
   
@@ -517,5 +517,40 @@ body { font-family: "Inter", sans-serif; }
   .footer-bottom__content-social {
     margin: 0;
     margin-top: 2rem;
+  }
+}
+
+@media (width >= 1200px) {
+  .footer-top__stats-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .footer-top__stats-text {
+    align-items: flex-start;
+  }
+
+  .footer-top__stats-value {
+    font-size: 1.35rem;
+  }
+
+  .footer-top__form {
+    padding: 1.5rem;
+  }
+
+  .footer-top__group-inputs {
+    flex-direction: row;
+    gap: 0;
+    margin-inline: auto;
+  }
+  
+  .footer-top__input {
+    width: 180px;
+    font-size: 1rem;
+    border-radius: .5rem 0 0 .5rem;
+  }
+
+  .footer-top__input--submit {
+    width: max-content;
+    border-radius: 0 .5rem .5rem 0;
   }
 }
