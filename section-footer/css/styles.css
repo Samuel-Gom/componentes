@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-white: #ffffff;
+  --color-blue: #207de9;
+}
+
 body { font-family: "Inter", sans-serif; }
 
 .section-footer {
@@ -46,7 +51,7 @@ body { font-family: "Inter", sans-serif; }
   z-index: 10;
   font-size: 1.35rem;
   font-weight: 900;
-  color: #ffffff;
+  color: var(--color-white);
   text-align: center;
 }
 
@@ -68,8 +73,8 @@ body { font-family: "Inter", sans-serif; }
 
 .footer-top__input--submit {
   font-weight: 600;
-  color: #ffffff;
-  background-color: #207de9;
+  color: var(--color-white);
+  background-color: var(--color-blue);
   transition: background-color .3s;
 
   &:hover {
@@ -106,14 +111,14 @@ body { font-family: "Inter", sans-serif; }
   font-weight: 700;
   text-align: center;
   text-decoration: none;
-  color: #207de9;
-  background-color: #ffffff;
-  border: 2px solid #207de9;
+  color: var(--color-blue);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-blue);
   transition: color .3s, background-color.3s;
 
   &:hover {
-    color: #ffffff;
-    background-color: #207de9;
+    color: var(--color-white);
+    background-color: var(--color-blue);
   }
 }
 
@@ -140,6 +145,10 @@ body { font-family: "Inter", sans-serif; }
 
 .footer-navigation__title::-webkit-details-marker { /* Oculta el marcador por defecto en safari o navegadores webkit */
   display: none;
+}
+
+.footer-navigation .footer-navigation__title:hover {
+  cursor: pointer;
 }
 
 .footer-navigation__icon { transition: transform .3s; }
@@ -346,14 +355,16 @@ body { font-family: "Inter", sans-serif; }
   .footer-top {
     margin-inline: 1.5rem;
     margin-bottom: 3rem;
+    padding-top: 1.5rem;
   }
 
   .footer-top__stats-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 2rem;
     padding-inline: 3rem;
-    margin: 2rem 0;
+    margin-block: 2rem;
   }
 
   .footer-top__stats-text {
@@ -365,6 +376,7 @@ body { font-family: "Inter", sans-serif; }
   .footer-top__stats-value {
     font-size: 1.4rem;
     font-weight: 700;
+    text-align: center;
   }
 
   .footer-top__stats-description {
@@ -424,6 +436,64 @@ body { font-family: "Inter", sans-serif; }
 }
 
 @media (width >= 1024px) {
+  .footer-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 1.5rem 3rem;
+  }
+
+  .footer-top__stats-wrapper {
+    flex-grow: 1;
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+    padding-inline: 0;
+  }
+  
+  .footer-top__stats-text {
+    align-items: flex-start;
+  }
+
+  .footer-top__stats-value {
+    font-size: 1.6rem;
+    text-align: left;
+  }
+
+  .footer-top__stats-description {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+  
+  .footer-top__form {
+    flex-grow: 1;
+    flex-direction: column;
+    width: 350px;
+  
+    &::after {
+      top: -92%;
+      left: -25%;
+      width: 150%;
+      height: 150%;
+      border-radius: 50%;
+    }
+  }
+  
+  .footer-top__title {
+    font-size: 1.15rem;
+    text-align: center;
+  }
+  
+  .footer-top__group-inputs {
+    flex-direction: column;
+    gap: .3rem;
+  }
+  
+  .footer-top__input {
+    width: 100%;
+    border-radius: .5rem;
+  }
+
   .footer-navigation--desktop {
     grid-template-columns: repeat(3, 1fr);
     margin: 1.5rem 3rem;
