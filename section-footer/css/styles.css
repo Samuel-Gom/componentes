@@ -16,8 +16,8 @@ body { font-family: "Inter", sans-serif; }
   margin-inline: auto;
 }
 
-.footer-top {
-  
+.footer-top__stats-wrapper {
+  display: none;
 }
 
 .footer-top__form {
@@ -73,12 +73,17 @@ body { font-family: "Inter", sans-serif; }
   transition: background-color .3s;
 
   &:hover {
+    cursor: pointer;
     background-color: #26b16d;
   }
 }
 
 .footer-navigation {
   padding-inline: 1.5rem;
+}
+
+.footer-navigation--desktop {
+  display: none;
 }
 
 .footer-navigation__call {
@@ -228,5 +233,219 @@ body { font-family: "Inter", sans-serif; }
 
   &:hover {
     transform: scale(1.15);
+    cursor: pointer;
+  }
+}
+
+@media (width >= 480px) {
+  .footer-navigation__call {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-navigation__paragraph {
+    margin: 0;
+    text-align: left;
+  }
+
+  .footer-navigation__btn-call {
+    white-space: nowrap;
+  }
+
+  .footer-bottom__company-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-bottom__paragraph {
+    text-align: left;
+  }
+
+  .footer-bottom__logos {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-bottom__logo {
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin: 0;
+  }
+}
+
+@media (width >= 600px) {
+  .footer-top__group-inputs {
+    align-items: center;
+  }
+
+  .footer-top__input {
+    width: 250px;
+  }
+
+  .footer-navigation {
+    display: none; /* Ocultamos el menu de navegacion para moviles */
+  }
+
+  .footer-navigation--desktop {
+    display: grid; /* Mostramos el menu de navegacion para tablets y desktop */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 1.5rem;
+  }
+
+  .footer-navigation__container-info,
+  .footer-navigation__container-menu {
+    padding: 1rem;
+  }
+
+  .footer-navigation__call {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .footer-navigation__paragraph {
+    font-size: 1.3rem;
+  }
+
+  .footer-navigation__btn-call {
+    width: 100%;
+  }
+
+  .footer-navigation__title {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .footer-bottom .footer-bottom__company-info {
+    display: none;
+  }
+
+  .footer-bottom__company-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .footer-bottom__paragraph {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+@media (width >= 768px) {
+  .footer-top {
+    margin-inline: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-top__stats-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding-inline: 3rem;
+    margin: 2rem 0;
+  }
+
+  .footer-top__stats-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-top__stats-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .footer-top__stats-description {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .footer-top__form {
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 950px;
+    margin-inline: auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+  
+    &::after {
+      top: -50%;
+      left: -10%;
+      width: 60%;
+      height: 200%;
+      border-radius: 47%;
+    }
+  }
+  
+  .footer-top__title {
+    text-align: left;
+    text-wrap: pretty;
+  }
+  
+  .footer-top__group-inputs {
+    flex-direction: row;
+    gap: 0;
+  }
+  
+  .footer-top__input {
+    width: 200px;
+    border-radius: .5rem 0 0 .5rem;
+  }
+  
+  .footer-top__input--submit {
+    border-radius: 0 .5rem .5rem 0;
+  }
+
+  .footer-navigation--desktop {
+    gap: 2rem 8rem;
+    padding-block: 3rem;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+  }
+
+  .footer-bottom__company-info .footer-bottom__logo {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (width >= 1024px) {
+  .footer-navigation--desktop {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1.5rem 3rem;
+  }
+
+  .footer-navigation__call {
+    padding-top: 2.5rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2rem 3rem;
+  }
+
+  .footer-bottom__logos .footer-bottom__logo {
+    width: 125px;
+  }
+
+  .footer-bottom__content-social {
+    margin: 0;
+    margin-top: 2rem;
   }
 }
