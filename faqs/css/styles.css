@@ -8,6 +8,76 @@
   --color-primary: #0d1216;
 }
 
-body {
-  font-family: "Noto Sans", sans-serif;
+body { font-family: "Noto Sans", sans-serif; }
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.faqs__content {
+  max-width: 800px;
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.faqs__title {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: .8rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.line-separator { 
+  border: none;
+  border-bottom: 1px solid #e1e4e7; 
+}
+
+.faqs__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.faq[open] svg {
+  transform: rotate(180deg);
+}
+
+.faq__title {
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: #f2f3f5;
+  }
+
+  &:active {
+    background-color: #e1e4e7;
+  }
+}
+
+.faq__title span { width: 85%; }
+
+.faq__title svg { transition: transform .3s; }
+
+.faq__paragraph {
+  padding-top: 1rem;
+  padding-inline: .5rem;
+  font-size: .9rem;
+  color: var(--color-primary);
+  line-height: 1.5;
+}
+
+@media (width >= 768px) {
+  .faqs__title { font-size: 2rem; }
 }
