@@ -56,6 +56,9 @@ body { font-family: "Noto Sans", sans-serif; }
   color: var(--color-primary);
   cursor: pointer;
   transition: background-color .3s;
+  /* Quitar el fondo azul al dar click en moviles al summary */
+  -webkit-tap-highlight-color: transparent;  /* Para WebKit */
+  -moz-tap-highlight-color: transparent; /* Para Firefox */
 
   &:hover {
     background-color: #f2f3f5;
